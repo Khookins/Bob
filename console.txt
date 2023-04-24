@@ -1,0 +1,15 @@
+| Welcome to bobs adventure...                                                          |
+| This is going to be what the UI will look like...                                     |
+| There will probably be this much text on the screen max, and it will wrap around when |
+| it hits 1 space before the line! If the word cuts off beforehand, like in this case e |
+| xactly, we can either just not care and finish writing the word below, or we might    |
+| simply skip to the next line if the word doesn't fit. What do you think?              |
+|                                                                                       |
+|                                                                                       |
+|                                                                                       |
+|                                                                                       |
+|                                                                                       |
+|                                                                                       |
+|                                                                                       |
+|                                                                                       |
+|_______________________________________________________________________________________|
