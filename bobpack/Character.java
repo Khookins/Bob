@@ -75,7 +75,7 @@ public class Character {
 
     public void attack(Character target) throws IOException {
         cc.setTextColour(ANSI.RED_BRIGHT);
-        cc.say(this.name + " attacks " + target.name + "!");
+        cc.say("!"+this.name + " attacks " + target.name + "!");
         cc.setTextColour(ANSI.DEFAULT);
         if (equipment.containsKey("weapon")) {
             Weapon weapon = (Weapon) equipment.get("weapon");
@@ -89,7 +89,7 @@ public class Character {
 
     public void takeDamage(int damage) throws IOException {
         this.health -= damage;
-        cc.say(this.name + " takes " + damage + " damage!");
+        cc.say("!" + this.name + " takes " + damage + " damage!");
     }
 
     public String getSummary() {

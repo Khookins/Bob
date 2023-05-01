@@ -88,7 +88,14 @@ public class ConsoleSection {
 
         // Write the lines within the console boundaries
         for (String line : lines) {
+            if (line.startsWith("!")) {
+                textGraphics.setForegroundColor(TextColor.ANSI.RED);
+                line = line.substring(1);
+            }
+
+            //THIS METHOD IS WHERE THE STRINGS ARE PRINTED TO THE SCREEN
             textGraphics.putString(startX, currentY, line);
+            textGraphics.setForegroundColor(TextColor.ANSI.DEFAULT);
             currentY++;
         }
 
