@@ -11,8 +11,12 @@ import bobpack.console.CustomConsole;
 public class Character {
     public String name;
     public int health;
+    public int maxHealth;
     public int energy;
     public int mana;
+    public int maxMana;
+    public int xp = 0;
+    public int nextXp = 100;
     public int rangedAmmo;
     public Map<String, Item> inventory;
     public Map<String, Item> equipment;
@@ -34,6 +38,7 @@ public class Character {
 
     public Character(String name, int health, int energy, int mana, int rangedAmmo, CustomConsole cc) {
         this.name = name;
+        this.maxHealth = health;
         this.health = health;
         this.energy = energy;
         this.mana = mana;
@@ -74,7 +79,7 @@ public class Character {
         if (equipment.containsKey("weapon")) {
             Weapon weapon = (Weapon) equipment.get("weapon");
             if (weapon.energyUse > this.energy) {
-                StatusEffect exhausted = new StatusEffect()
+                //StatusEffect exhausted = new StatusEffect()
             }else{
                 target.takeDamage(weapon.damage);
             }
@@ -84,5 +89,11 @@ public class Character {
     public void takeDamage(int damage) throws IOException {
         this.health -= damage;
         cc.say(this.name + " takes " + damage + " damage!");
+    }
+
+    public String getSummary() {
+        return "Name: " + this.name + "\nHealth: " + this.health + "\nEnergy: " + this.energy + "\nMana: " + this.mana
+                + "\nRanged Ammo: " + this.rangedAmmo + "\nInventory: " + this.showInventory() + "\nWeapon: "
+                + this.equipment.get("weapon").name;
     }
 }
