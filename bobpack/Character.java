@@ -76,6 +76,7 @@ public class Character {
     public void attack(Character target) throws IOException {
         cc.setTextColour(ANSI.RED_BRIGHT);
         cc.say(this.name + " attacks " + target.name + "!");
+        cc.setTextColour(ANSI.DEFAULT);
         if (equipment.containsKey("weapon")) {
             Weapon weapon = (Weapon) equipment.get("weapon");
             if (weapon.energyUse > this.energy) {
