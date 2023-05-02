@@ -18,30 +18,30 @@ public class BobsAdventure {
         //Both of these methods will return what the user has chosen. For example, look at the characterName variable below:
         String characterName = "";
         int askedAmount = 0;
-        while(characterName == "" && isDead == false)
+        while(characterName.equals("") && isDead == false)
         {
             characterName = cc.askText("What is your name?");
-            if (characterName == "" && askedAmount == 0) {
+            if (characterName.equals("") && askedAmount == 0) {
                 cc.say("ENTER A REAL NAME MAN OR THERE WILL BE TROUBLE YOU WILL BE KILLED BY SKELETONS");
                 askedAmount += 1;
                 continue;
             }
-            if (characterName == "" && askedAmount == 1) {
+            if (characterName.equals("") && askedAmount == 1) {
                 cc.say("come on man, i told you what will happen. last chance");
                 askedAmount += 1;
                 continue;
             }
-            if (characterName == "" && askedAmount == 2) {
+            if (characterName.equals("") && askedAmount == 2) {
                 cc.say("...");
                 askedAmount += 1;
                 continue;
             }
-            if (characterName == "" && askedAmount == 3) {
+            if (characterName.equals("") && askedAmount == 3) {
                 cc.say("please stop. its for your own good");
                 askedAmount += 1;
                 continue;
             }
-            if (characterName == "" && askedAmount == 4) {
+            if (characterName.equals("") && askedAmount == 4) {
                 cc.say("alright. end of the line buddy");
                 cc.say("YOU WERE KILLED BY SKELETONS. I DONT KNOW WHAT YOU THOUGHT WOULD HAPPEN");
                 cc.askContinue();
