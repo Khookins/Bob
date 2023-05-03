@@ -72,13 +72,13 @@ public class InteractiveSection extends ConsoleSection{
                 } else if (keyStroke.getKeyType() == KeyType.ArrowDown) {
                     selectedIndex = (selectedIndex + 1) % choices.length;
                 } else if (keyStroke.getKeyType() == KeyType.Enter) {
-                    break;
+                    return choices[selectedIndex];
                 }
             }
             screen.refresh();
         }
-        screen.refresh();
-        return choices[selectedIndex];
+        
+        
     }
 
     public void waitForContinue(Terminal terminal) throws IOException {
@@ -96,6 +96,8 @@ public class InteractiveSection extends ConsoleSection{
             textGraphics.setForegroundColor((i == selectedIndex) ? TextColor.ANSI.BLACK : TextColor.ANSI.WHITE);
             textGraphics.setBackgroundColor((i == selectedIndex) ? TextColor.ANSI.WHITE : TextColor.ANSI.DEFAULT);
             textGraphics.putString(startX, startY + i + 3, prefix + choices[i]);
+            textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
+            textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
             screen.refresh();
         }
         screen.refresh();
