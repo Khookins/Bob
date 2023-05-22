@@ -17,7 +17,7 @@ public abstract class Observable {
         observers.remove(observer);
     }
 
-    public void notifyObservers() throws IOException {
+    public void notifyObservers() {
         for(Observer observer : observers)
         {
             observer.update(this);
