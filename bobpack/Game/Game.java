@@ -100,6 +100,10 @@ public class Game {
             }
             return;
         } else {
+            if(name.equals("#skip1#")){
+                afterSkeletonDefeated();
+                return;
+            }
             say("Hello, " + name + "!");
             player.name = name;
             playerPanel.addStats(player);
@@ -110,7 +114,7 @@ public class Game {
 
             say("It seems like you are in a cave.");
             say("Looking around, you see a rusty floor sword");
-            consolePanel.askOptions("Pick up the sword?", new String[] { "Yes", "No" },
+            consolePanel.askOptions("Pick up the sword?", new String[] { "Yes", "Yes, But Actually No" },
                     response -> afterSwordPickedUp(response));
         }
 
@@ -141,7 +145,7 @@ public class Game {
     {
         String bonusMessage = "";
         if (response.equalsIgnoreCase("No")) {
-            say("HA, you thought you had free will!");
+            say("HA, you thought you had free will!",1000);
             say("At the end of the day, the only important thing is gold coins, magic hats and skeletons.");
             bonusMessage = "wait, what - skeletons?";
         }

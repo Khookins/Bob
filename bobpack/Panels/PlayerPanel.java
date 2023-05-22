@@ -2,6 +2,7 @@ package bobpack.Panels;
 
 import javax.swing.*;
 import bobpack.Character;
+import bobpack.Weapon;
 import bobpack.Patterns.Observer;
 
 import java.awt.*;
@@ -23,6 +24,7 @@ public class PlayerPanel extends Panel implements Observer<Character>{
         statsPanel.addStat("Name", () -> {
             return character.getName();});
         statsPanel.addStat("Health", () -> character.getHealth());
+        statsPanel.addStat("Mana", () -> character.getMana());
     }
 
     @Override
